@@ -5,29 +5,20 @@
                 <img src="/img/circle-gameful.svg" class="header__logo" alt="Gameful Developments">
             </a>
         </div>
-        <nav class="header__nav">
-            <!--
-            {{ range .Site.Menus.main }}
-                <a class="header__nav-link" href="{{ .URL }}">
-                {{ if .Pre }}
-                    {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
-                    {{ $icon }}
-                {{ end }}
-                {{ $text := print .Name | safeHTML }}
-                {{ $text }}
-                </a>
-            {{ end }}
-            -->
-
+        <nav id="main-menu" class="header__nav">
             {{ $current := . }}
             {{ range .Site.Menus.main }}
-                {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
+                {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
                 {{ $active = or $active (eq .Name $current.Title) }}
                 {{ $active = or $active (and (eq .Name "News") (eq $current.Section "news")) }}
                 {{ $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) }}
-                <a class="header__nav-link" href="{{ .URL }}" class="{{ if $active }}active{{ end }}">{{ .Name }}</a>
+                <a class="header__nav-link {{ if $active }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
             {{ end }}
         </nav>
+        <button id="mobile-menu-button" class="header__menu-button">
+            <i class="open" data-feather="menu"></i>
+            <i class="close" data-feather="x"></i>
+        </button>
         <aside class="header__social">
             {{ range .Site.Menus.social }}
                 {{ $text := print .Name | safeHTML }}

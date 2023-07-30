@@ -2,6 +2,7 @@
 {{ partial "header.html" . }}
 <main class="wrapper">
   <h1>{{ .Title }}</h1>
+  {{ partial "metadata.html" . }}
   {{ .Content }}
 </main>
 {{ partial "footer.html" . }}
