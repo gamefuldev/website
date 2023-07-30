@@ -189,7 +189,7 @@ const container = document.getElementById('gameContainer');
 const config = {
     type: Phaser.AUTO,
     width: container.offsetWidth,
-    height: 650,
+    height: 500,
     parent: 'gameContainer',
     transparent: true,
     physics: {
