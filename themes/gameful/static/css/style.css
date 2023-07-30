@@ -132,6 +132,16 @@ ul {
     }
 }
 
+.homegame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: background-color 0.4s ease;
+}
+
 .wrapper {
     margin: auto;
     max-width: 54rem;
@@ -311,7 +321,7 @@ ul {
         width: 3rem;
         height: 3rem;
     }
-netfl
+
     .header__menu-button .open { display: block; }
     .header__menu-button.active .open { display: none; }
     .header__menu-button .close { display: none; }
