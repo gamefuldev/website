@@ -73,8 +73,6 @@ class HomePage extends Phaser.Scene {
     }
 
     update() {
-        this.player.body.velocity.y += 20;
-
         if (!this.gameActive) {
             return;
         }
@@ -82,6 +80,8 @@ class HomePage extends Phaser.Scene {
         if (this.player.angle < 20) {
             this.player.angle += 1;
         }
+
+        this.player.body.velocity.y += 20;
     }
 
     flapBird() {
