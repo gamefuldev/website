@@ -151,7 +151,7 @@ ul {
     border: 2px solid #111;
     overflow: hidden;
     border-radius: 20px 0;
-    min-height: 600px;
+    min-height: 500px;
 }
 
 .homegame canvas {
