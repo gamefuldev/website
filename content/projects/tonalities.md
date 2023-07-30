@@ -10,7 +10,7 @@ thumbnail: /tonalities/tonalities-thumbnail.png
 
 Tonalities is a physics-based puzzle game which challenges players to develop elaborate trick-shots to hit all blocks within a level.
 
-It is being co-developed in Beijing and London (Ontario) between Winter 2022 and is due for release on Steam Early Access at the end of Summer 2023.
+Development started in Winter 2022 between Beijing and London (Ontario). The game is due for release on Steam Early Access at the end of Summer 2023.
 
 [You can try the demo today on Steam](https://store.steampowered.com/app/2265750?utm_source=gameful)
 
