@@ -16,25 +16,43 @@ class HomePage extends Phaser.Scene {
     preload() {
         this.load.image('player', '../img/game/bird.png');
         this.load.image('pipe', '../img/game/pipe.png');
+        this.load.image('barrier', '../img/game/barrier.png');
     }
 
     create() {
         // Set the game's background colour
         this.containerDiv = document.getElementById('gameContainer');
-        this.containerDiv.style.backgroundColor = "#ffc93c";
+        this.containerDiv.style.backgroundColor = "#fdf6e5";
         // Set height of a pipe row based on browser window size
-        this.rowHeight = game.config.height / 89.5;
+        if (game.config.width < 700) {
+            this.rowHeight = game.config.height / 100;
+        } else {
+            this.rowHeight = game.config.height / 89.5;
+        }
+        
         this.prevHole = Math.floor(this.rowHeight / 2);
+        this.score = 0;
+        this.welcomeMessage();
 
         // Create player
-        this.player = this.physics.add.sprite(100, 350, 'player').setScale(1);
+        if (game.config.width < 700) {
+            this.player = this.physics.add.sprite(50, 250, 'player').setScale(1);
+        } else {
+            this.player = this.physics.add.sprite(100, 350, 'player').setScale(1);
+        }
         this.input.keyboard.on('keydown-SPACE', this.flapBird, this);
         this.input.on('pointerdown', this.flapBird, this);
     
         // Create platforms
         this.platforms = this.physics.add.staticGroup();
-        this.platforms.create(0, 200, 'pipe').setScale(100, 0.25).refreshBody();
-        this.platforms.create(0, game.config.height, 'pipe').setScale(100, 0.25).refreshBody();
+        if (game.config.width < 700) {
+            this.platforms.create(0, 130, 'barrier').setScale(200, 0.25).refreshBody();
+            this.platforms.create(0, game.config.height - 60, 'barrier').setScale(100, 0.25).refreshBody();
+        } else {
+            this.platforms.create(0, 200, 'barrier').setScale(200, 0.25).refreshBody();
+            this.platforms.create(0, game.config.height, 'barrier').setScale(100, 0.25).refreshBody();
+        }
+        
     
         // Create pipes
         this.pipes = this.physics.add.staticGroup();
@@ -53,8 +71,6 @@ class HomePage extends Phaser.Scene {
 
         this.gameActive = true;
         
-        this.score = 0;
-        this.labelScore = this.add.text(game.config.width - 50, 232, this.score, { font: "30px Arial", fill: "#111111" });
     }
 
     update() {
@@ -107,23 +123,51 @@ class HomePage extends Phaser.Scene {
 
         for (let i = 0; i < this.rowHeight; i ++) {
             if (i != hole && i != hole + 1 && i != hole + 2) {
-                this.addOnePipe(game.config.width, i * 69 + 270);
+                if (game.config.width < 700) {
+                    this.addOnePipe(game.config.width, i * 69 + 180);
+                } else {
+                    this.addOnePipe(game.config.width, i * 69 + 270);
+                }
+                
             }
         }
 
         if (this.gameActive) {
             this.prevHole = hole;
             this.score += 1;
-            this.labelScore.text = this.score;
+            this.labelScore.text = 'Your current score is: ' + this.score;
         }
+    }
+
+    welcomeMessage() {
+        let r1 = this.add.rectangle(game.config.width / 2, game.config.height / 2, 320, 320, 0xffffff).setOrigin(0.5);
+        r1.setStrokeStyle(4, 0x111111);
+
+        this.add.text(
+            game.config.width / 2, game.config.height / 2 - 45, 
+            'An indie studio', 
+            { font: '32px Arial', fill: '#111111' }
+        ).setOrigin(0.5);
+
+        this.add.text(
+            game.config.width / 2, game.config.height / 2 - 10, 
+            'building fun things.', 
+            { font: '32px Arial', fill: '#111111' }
+        ).setOrigin(0.5);
+
+        this.labelScore = this.add.text(
+            game.config.width / 2, game.config.height / 2 + 40, 
+            'Your current score is: ' + this.score, 
+            { font: '20px Arial', fill: '#111111' }
+        ).setOrigin(0.5);
     }
 
     gameOver() {
         this.gameActive = false;
-        this.containerDiv.style.backgroundColor = "#fdf6e5";
+        this.containerDiv.style.backgroundColor = "#888888";
         this.physics.pause();   
 
-        this.add.rectangle(game.config.width / 2, game.config.height / 2, 320, 320, 0xffffff).setOrigin(0.5);
+        this.add.rectangle(game.config.width / 2, game.config.height / 2, 320, 320, 0xffffff).setOrigin(0.5).setStrokeStyle(4, 0x111111); 
 
         this.add.text(
             game.config.width / 2, game.config.height / 2 - 45, 
