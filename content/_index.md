@@ -2,6 +2,10 @@
 title: Gameful
 ---
 
-## Finding fun
+## Welcome friends!
 
-Welcome to the gameful website, we are a remote indie studio who builds fun experiences.
+We are Gameful, a remote indie studio building fun experiences. Thanks for checking out our website.
+
+To learn more about us, [click here](/about).
+
+To learn about our current projects, [click here](/projects).

@@ -20,15 +20,13 @@ class HomePage extends Phaser.Scene {
     }
 
     create() {
+        // Allow users to scroll
+ 
         // Set the game's background colour
         this.containerDiv = document.getElementById('gameContainer');
-        this.containerDiv.style.backgroundColor = "#fdf6e5";
+        this.containerDiv.style.backgroundColor = "#ffffff";
         // Set height of a pipe row based on browser window size
-        if (game.config.width < 700) {
-            this.rowHeight = game.config.height / 100;
-        } else {
-            this.rowHeight = game.config.height / 89.5;
-        }
+        this.rowHeight = game.config.height / 75;
         
         this.prevHole = Math.floor(this.rowHeight / 2);
         this.score = 0;
@@ -36,22 +34,20 @@ class HomePage extends Phaser.Scene {
 
         // Create player
         if (game.config.width < 700) {
-            this.player = this.physics.add.sprite(50, 250, 'player').setScale(1);
+            this.player = this.physics.add.sprite(50, 350, 'player').setScale(1);
         } else {
             this.player = this.physics.add.sprite(100, 350, 'player').setScale(1);
         }
+        
+        
         this.input.keyboard.on('keydown-SPACE', this.flapBird, this);
         this.input.on('pointerdown', this.flapBird, this);
+        
     
         // Create platforms
         this.platforms = this.physics.add.staticGroup();
-        if (game.config.width < 700) {
-            this.platforms.create(0, 130, 'barrier').setScale(200, 0.25).refreshBody();
-            this.platforms.create(0, game.config.height - 60, 'barrier').setScale(100, 0.25).refreshBody();
-        } else {
-            this.platforms.create(0, 200, 'barrier').setScale(200, 0.25).refreshBody();
-            this.platforms.create(0, game.config.height, 'barrier').setScale(100, 0.25).refreshBody();
-        }
+        this.platforms.create(0, 0, 'barrier').setScale(200, 0.5).refreshBody();
+        this.platforms.create(0, game.config.height, 'barrier').setScale(200, 0.5).refreshBody();
         
     
         // Create pipes
@@ -111,7 +107,7 @@ class HomePage extends Phaser.Scene {
         if (!this.gameActive) {
             return;
         }
-        
+
         var hole = this.prevHole + Math.floor(Math.random() * 7) - 3;
 
         if (hole < 0)
@@ -126,12 +122,7 @@ class HomePage extends Phaser.Scene {
 
         for (let i = 0; i < this.rowHeight; i ++) {
             if (i != hole && i != hole + 1 && i != hole + 2) {
-                if (game.config.width < 700) {
-                    this.addOnePipe(game.config.width, i * 69 + 180);
-                } else {
-                    this.addOnePipe(game.config.width, i * 69 + 270);
-                }
-                
+                this.addOnePipe(game.config.width, i * 68 + 53);
             }
         }
 
@@ -141,8 +132,8 @@ class HomePage extends Phaser.Scene {
     }
 
     welcomeMessage() {
-        let r1 = this.add.rectangle(game.config.width / 2, game.config.height / 2, 320, 320, 0xffffff).setOrigin(0.5);
-        r1.setStrokeStyle(4, 0x111111);
+        // let r1 = this.add.rectangle(game.config.width / 2, game.config.height / 2, 320, 320, 0xffffff).setOrigin(0.5);
+        // r1.setStrokeStyle(4, 0x111111);
 
         this.add.text(
             game.config.width / 2, game.config.height / 2 - 45, 
@@ -165,9 +156,8 @@ class HomePage extends Phaser.Scene {
 
     gameOver() {
         this.gameActive = false;
-        this.containerDiv.style.backgroundColor = "#888888";
         this.physics.pause();   
-
+        this.add.rectangle(game.config.width / 2, game.config.height / 2, game.config.width, game.config.height, 0x888888, 0.5).setOrigin(0.5); 
         this.add.rectangle(game.config.width / 2, game.config.height / 2, 320, 320, 0xffffff).setOrigin(0.5).setStrokeStyle(4, 0x111111); 
 
         this.add.text(
@@ -194,10 +184,12 @@ class HomePage extends Phaser.Scene {
     }
 }
 
+const container = document.getElementById('gameContainer');
+
 const config = {
     type: Phaser.AUTO,
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: container.offsetWidth,
+    height: 650,
     parent: 'gameContainer',
     transparent: true,
     physics: {

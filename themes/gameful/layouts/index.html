@@ -1,8 +1,10 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
-<div id="gameContainer" class="homegame"></div>
 <div class="wrapper homepage">
+    <div id="gameContainer" class="homegame"></div>
+    <hr>
     {{ .Content }}
+    <hr>
 </div>
 {{ partial "footer.html" . }}
 {{ partial "scripts.html" . }}
