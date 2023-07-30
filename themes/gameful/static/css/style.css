@@ -572,6 +572,17 @@ netfl
     transform: translate(0, 0);
 }
 
+@media screen and (max-width: 700px) {
+    .projects__item {
+        width: 100%;
+        padding-bottom: 66%;
+    }
+
+    .projects__link .projects__name {
+        transform: translate(0, 0);
+    }
+}
+
 .single-project__hero {
     width: 100%;
     display: block;

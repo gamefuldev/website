@@ -3,8 +3,6 @@ import * as THREE from 'three';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
-import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
-
 THREE.Cache.enabled = true;
 
 let container;
@@ -19,10 +17,10 @@ let text = 'gameful',
     bevelEnabled = true,
     font = undefined,
     fontName = 'montserrat',
-    fontWeight = 'bold';
+    fontWeight = 'bold',
+    size = window.innerWidth / 20;
 
 const height = 10,
-    size = 60,
     hover = 30,
     curveSegments = 10,
     bevelThickness = 4,
@@ -123,10 +121,6 @@ function init() {
 
     container.style.touchAction = 'none';
     container.addEventListener( 'pointerdown', onPointerDown );
-    // document.addEventListener( 'keypress', onDocumentKeyPress );
-    // document.addEventListener( 'keydown', onDocumentKeyDown );
-
-    //
 
     const params = {
         changeColor: function () {
@@ -159,45 +153,12 @@ function init() {
 }
 
 function onWindowResize() {
+    size = window.innerWidth / 20;
     windowHalfX = window.innerWidth / 2;
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize( window.innerWidth, window.innerHeight );
-
-}
-
-//
-
-function onDocumentKeyDown( event ) {
-
-    if ( firstLetter ) {
-        firstLetter = false;
-        text = '';
-    }
-
-    const keyCode = event.keyCode;
-
-    // backspace
-    if ( keyCode == 8 ) {
-        event.preventDefault();
-        text = text.substring( 0, text.length - 1 );
-        refreshText();
-        return false;
-    }
-
-}
-
-function onDocumentKeyPress( event ) {
-    const keyCode = event.which;
-    // backspace
-    if ( keyCode == 8 ) {
-        event.preventDefault();
-    } else {
-        const ch = String.fromCharCode( keyCode );
-        text += ch;
-        refreshText();
-    }
-
+    refreshText();
 }
 
 function loadFont() {
