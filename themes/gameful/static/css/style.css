@@ -417,6 +417,7 @@ ul {
         bottom: 0;
         left: 0;
         background: #111;
+        z-index: 2;
     }
 
     .header__social-link {
