@@ -114,6 +114,12 @@ h4 {
     margin-bottom: 1rem;
 }
 
+@media screen and (max-width: 600px) {
+    h4 {
+        padding-left: 1rem;
+    }
+}
+
 ul {
     padding-left: 3.5rem;
     list-style-type: square;
