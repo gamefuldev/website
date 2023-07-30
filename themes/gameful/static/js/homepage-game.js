@@ -136,14 +136,8 @@ class HomePage extends Phaser.Scene {
         // r1.setStrokeStyle(4, 0x111111);
 
         this.add.text(
-            game.config.width / 2, game.config.height / 2 - 45, 
-            'An indie studio', 
-            { font: '32px Arial', fill: '#111111' }
-        ).setOrigin(0.5);
-
-        this.add.text(
             game.config.width / 2, game.config.height / 2 - 10, 
-            'building fun things.', 
+            'Building fun things.', 
             { font: '32px Arial', fill: '#111111' }
         ).setOrigin(0.5);
 
@@ -191,7 +185,7 @@ const config = {
     width: container.offsetWidth,
     height: 500,
     parent: 'gameContainer',
-    transparent: true,
+    backgroundColor: '#ffffff',
     physics: {
         default: "arcade",
         arcade: {

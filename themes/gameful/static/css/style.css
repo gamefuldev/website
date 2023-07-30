@@ -147,26 +147,69 @@ ul {
     transition: background-color 0.4s ease;
     z-index: 2;
     line-height: 1;
+    margin-top: 6rem;
     margin-bottom: 6rem;
-    border: 2px solid #111;
-    overflow: hidden;
-    border-radius: 20px 0;
     min-height: 500px;
+}
+
+.homegame:after {
+    content: "gameful";
+    position: absolute;
+    top: -9rem;
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%, 0);
+    font-size: 15rem;
+    color: #ffc93c;
+    opacity: 1;
+    font-weight: bold;
+    letter-spacing: -15px;
+    pointer-events: none;
 }
 
 .homegame canvas {
     margin-bottom: -7px;
+    border-radius: 20px 0;
+    box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 1000px) {
+    .homegame:after {
+        font-size: 8rem;
+        top: -4.75rem;
+        left: 0;
+        letter-spacing: -7px;
+        transform: translate(-2rem, 0);
+    } 
 }
 
 @media screen and (max-width: 700px) {
     .homegame {
-        margin-left: -2rem;
-        margin-right: -2rem;
+        margin-top: 2rem;
+    }
+    
+    .homegame:after {
+        display: none;
+    }
+
+    .homegame canvas {
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .homegame {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        margin-bottom: -3rem;
         border-radius: 0;
     }
 
     .wrapper.homepage {
         padding-top: 8rem;
+        display: flex;
+        flex-direction: column-reverse;
     }
 }
 
@@ -174,6 +217,7 @@ ul {
     .wrapper {
         padding-top: 4rem;
     }
+
 }
 
 @media screen and (max-width: 700px) {
