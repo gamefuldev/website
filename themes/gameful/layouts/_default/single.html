@@ -1,9 +1,5 @@
-{{ partial "head.html" }}
-{{ partial "header.html" . }}
-<main class="wrapper">
+{{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ partial "metadata.html" . }}
   {{ .Content }}
-</main>
-{{ partial "footer.html" . }}
-{{- partial "scripts.html" . -}}
+{{ end }}

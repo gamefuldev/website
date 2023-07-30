@@ -1,9 +1,8 @@
-{{ partial "head.html" }}
-{{ partial "header.html" . }}
-{{ if .Params.Hero }}
-<img class="single-project__hero" src="/img/projects{{ .Params.Hero }}" alt="">
-{{ end }}
-<main class="wrapper">
+{{ define "main" }}
+  {{ if .Params.Hero }}
+  <img class="single-project__hero" src="/img/projects{{ .Params.Hero }}" alt="">
+  {{ end }}
+
   <h1>{{ .Title }}</h1>
   <ul>
     <li>Release date: <strong>{{ .Params.Release }}</strong></li>
@@ -12,7 +11,4 @@
   </ul>
   <hr>
   {{ .Content }}
-</main>
-
-{{ partial "footer.html" . }}
-{{- partial "scripts.html" . -}}
+{{ end }}

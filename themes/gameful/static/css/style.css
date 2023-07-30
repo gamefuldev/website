@@ -153,9 +153,15 @@ ul {
 }
 
 .homegame:after {
-    content: "gameful";
+    content: "";
     position: absolute;
-    top: -9rem;
+    width: calc(100% + 4rem);
+    height: 14rem;
+    background-image: url("../img/yellow logo.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: -7rem;
     left: 50%;
     z-index: 0;
     transform: translate(-50%, 0);
@@ -175,10 +181,8 @@ ul {
 
 @media screen and (max-width: 1000px) {
     .homegame:after {
-        font-size: 8rem;
-        top: -4.75rem;
+        top: -7rem;
         left: 0;
-        letter-spacing: -7px;
         transform: translate(-2rem, 0);
     } 
 }
@@ -189,7 +193,9 @@ ul {
     }
     
     .homegame:after {
-        display: none;
+        left: 1rem;
+        bottom: auto;
+        width: 20rem;
     }
 
     .homegame canvas {

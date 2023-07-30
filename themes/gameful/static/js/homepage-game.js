@@ -8,6 +8,8 @@ class HomePage extends Phaser.Scene {
     rowHeight;
     score;
     timer;
+    welcome;
+    welcome2;
 
     constructor () {
         super({ key: 'homepage' });
@@ -65,7 +67,8 @@ class HomePage extends Phaser.Scene {
             loop: true
         });
 
-        this.gameActive = true;
+        // this.gameActive = true;
+        this.physics.pause();  
         
     }
 
@@ -108,13 +111,13 @@ class HomePage extends Phaser.Scene {
             return;
         }
 
-        var hole = this.prevHole + Math.floor(Math.random() * 7) - 3;
+        var hole = this.prevHole + Math.floor(Math.random() * 3) - 1;
 
         if (hole < 0)
             hole = 0;
 
         if (hole > this.rowHeight - 3) 
-            hole = this.rowHeight - 3;
+            hole = this.rowHeight - 5;
 
         hole = Math.round(hole, 0);
 
@@ -135,17 +138,24 @@ class HomePage extends Phaser.Scene {
         // let r1 = this.add.rectangle(game.config.width / 2, game.config.height / 2, 320, 320, 0xffffff).setOrigin(0.5);
         // r1.setStrokeStyle(4, 0x111111);
 
-        this.add.text(
+        this.welcome = this.add.text(
             game.config.width / 2, game.config.height / 2 - 10, 
             'Building fun things.', 
-            { font: '32px Arial', fill: '#111111' }
+            { font: '32px montserrat', fill: '#111111' }
         ).setOrigin(0.5);
 
-        this.labelScore = this.add.text(
+        this.welcome2 = this.labelScore = this.add.text(
             game.config.width / 2, game.config.height / 2 + 40, 
-            'Your current score is: ' + this.score, 
-            { font: '20px Arial', fill: '#111111' }
+            'Click to begin', 
+            { font: '20px montserrat', fill: '#111111' }
         ).setOrigin(0.5);
+
+        this.input.once('pointerup', function (event) {
+            this.physics.resume();   
+            this.gameActive = true;
+            this.welcome.visible = false;
+            this.welcome2.visible = false;
+        }, this);
     }
 
     gameOver() {
@@ -157,19 +167,19 @@ class HomePage extends Phaser.Scene {
         this.add.text(
             game.config.width / 2, game.config.height / 2 - 45, 
             'Game Over', 
-            { font: '24px Arial', fill: '#111111' }
+            { font: '24px montserrat', fill: '#111111' }
         ).setOrigin(0.5);
 
         this.add.text(
             game.config.width / 2, game.config.height / 2 - 10, 
             'Final score: ' + this.score, 
-            { font: '32px Arial', fill: '#111111' }
+            { font: '32px montserrat', fill: '#111111' }
         ).setOrigin(0.5);
 
         this.add.text(
             game.config.width / 2, game.config.height / 2 + 40, 
             'Click to restart', 
-            { font: '20px Arial', fill: '#111111' }
+            { font: '20px montserrat', fill: '#111111' }
         ).setOrigin(0.5);
 
         this.input.once('pointerup', function (event) {
@@ -196,4 +206,15 @@ const config = {
     scene: HomePage
 }
 
-const game = new Phaser.Game(config);
+let montserrat = new FontFace(
+    "montserrat", 
+    "url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw0aXpsog.woff2)"
+);
+
+var game;
+
+montserrat.load().then((font) => {
+    document.fonts.add(font);
+    game = new Phaser.Game(config);
+});
+

@@ -1,7 +1,17 @@
-baseURL = 'https://www.gameful.dev'
-languageCode = 'en-gb'
 title = 'Gameful'
 theme = 'gameful'
+baseURL = 'https://www.gameful.dev'
+
+defaultContentLanguage = 'en'
+[languages]
+  [languages.en]
+    contentDir = 'content'
+    disabled = false
+    languageCode = 'en-GB'
+    languageDirection = 'ltr'
+    languageName = 'English'
+    title = 'Gameful'
+    weight = 1
 
 [contentTypes]
     [contentTypes.projects]
@@ -21,7 +31,7 @@ theme = 'gameful'
         weight = 3
     [[menu.main]]
         name = "News"
-        url = "/posts/"
+        url = "/news/"
         weight = 4
     [[menu.main]]
         name = "Contact"

@@ -10,7 +10,7 @@
             {{ range .Site.Menus.main }}
                 {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
                 {{ $active = or $active (eq .Name $current.Title) }}
-                {{ $active = or $active (and (eq .Name "News") (eq $current.Section "news")) }}
+                {{ $active = or $active (and (eq .Name "Projects") (eq $current.Section "projects")) }}
                 {{ $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) }}
                 <a class="header__nav-link {{ if $active }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
             {{ end }}
