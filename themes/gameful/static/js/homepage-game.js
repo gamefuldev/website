@@ -108,6 +108,9 @@ class HomePage extends Phaser.Scene {
     }
 
     addRowOfPipes() {
+        if (!this.gameActive) {
+            return;
+        }
         
         var hole = this.prevHole + Math.floor(Math.random() * 7) - 3;
 
@@ -132,11 +135,9 @@ class HomePage extends Phaser.Scene {
             }
         }
 
-        if (this.gameActive) {
-            this.prevHole = hole;
-            this.score += 1;
-            this.labelScore.text = 'Your current score is: ' + this.score;
-        }
+        this.prevHole = hole;
+        this.score += 1;
+        this.labelScore.text = 'Your current score is: ' + this.score;
     }
 
     welcomeMessage() {
