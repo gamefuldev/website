@@ -1,0 +1,18 @@
+{{ partial "head.html" }}
+{{ partial "header.html" . }}
+{{ if .Params.Hero }}
+<img class="single-project__hero" src="/img/projects{{ .Params.Hero }}" alt="">
+{{ end }}
+<main class="wrapper">
+  <h1>{{ .Title }}</h1>
+  <ul>
+    <li>Release date: <strong>{{ .Params.Release }}</strong></li>
+    <li>Platform: <strong>{{ .Params.Platforms }}</strong></li>
+    <li>Engine: <strong>{{ .Params.Engine }}</strong></li>
+  </ul>
+  <hr>
+  {{ .Content }}
+</main>
+
+{{ partial "footer.html" . }}
+{{- partial "scripts.html" . -}}

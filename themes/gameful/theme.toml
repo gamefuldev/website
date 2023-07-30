@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Gameful"
+license = "MIT"
+licenselink = "https://github.com/gamefuldev/gameful-hugo/blob/master/LICENSE"
+description = "Custom Hugo theme for the Gameful website"
+homepage = "https://www.gameful.dev"
+tags = []
+features = []
+min_version = "0.115.4"
+
+[author]
+  name = "Jared Rigby"
+  homepage = "https://www.jaredrigby.co.uk/"

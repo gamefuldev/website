@@ -1,0 +1,26 @@
+{{ partial "head.html" }}
+{{ partial "header.html" . }}
+<main>
+    <div class="wrapper">
+        <h1 id="title">Our Work</h1>
+        <hr>
+        <ul class="projects">
+        {{ range .Pages }}
+            <li class="projects__item">
+                <a class="projects__link" href="{{ .Permalink }}">
+                    {{ if .Params.Thumbnail }}
+                    <img class="projects__thumbnail" src="/img/projects{{ .Params.Thumbnail }}" alt="">
+                    {{ end }}
+                    <span class="projects__name">
+                        {{ .Title }} <br>
+                        {{ .Params.Year }}
+                    </span>
+                </a>
+            </li>
+        {{ end }}
+        </ul>
+        <hr>
+    </div>
+</main>
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}

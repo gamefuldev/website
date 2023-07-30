@@ -1,0 +1,24 @@
+{
+  "name": "gameful-hugo",
+  "version": "1.0.0",
+  "description": "Hugo powered website for Gameful",
+  "main": "index.js",
+  "scripts": {
+    "dev": "exec-bin node_modules/.bin/hugo/hugo server --gc --disableFastRender",
+    "build": "exec-bin node_modules/.bin/hugo/hugo --gc --cleanDestinationDir --minify",
+    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo"
+  },
+  "author": "Jared Rigby",
+  "license": "MIT",
+  "devDependencies": {
+    "npm-check": "^6.0.1"
+  },
+  "dependencies": {
+    "exec-bin": "^1.0.0",
+    "hugo-installer": "^4.0.1",
+    "three": "^0.155.0"
+  },
+  "otherDependencies": {
+    "hugo": "0.115.4"
+  }
+}

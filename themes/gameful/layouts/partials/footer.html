@@ -1,0 +1,20 @@
+<!--
+<footer class="site-footer">
+    <div class="site-footer__content">
+        Copyright (c) {{ now.Format "2006"}} Jared Rigby t/a Gameful Developments
+    </div>
+</footer>
+-->
+{{ if .IsHome }}
+<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.155.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.155.0/examples/jsm/"
+    }
+  }
+</script>
+<script src="/js/homepage.js" type="module"></script>
+{{ end }}
+</html>

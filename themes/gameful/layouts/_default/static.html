@@ -1,0 +1,7 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+<main class="wrapper static {{ .Params.Class }}">
+  {{ .Content }}
+</main>
+{{ partial "footer.html" . }}
+{{- partial "scripts.html" . -}}

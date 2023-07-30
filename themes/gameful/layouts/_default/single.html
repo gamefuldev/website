@@ -1,0 +1,8 @@
+{{ partial "head.html" }}
+{{ partial "header.html" . }}
+<main class="wrapper">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+</main>
+{{ partial "footer.html" . }}
+{{- partial "scripts.html" . -}}
