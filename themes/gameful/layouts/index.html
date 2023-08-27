@@ -1,7 +1,15 @@
 {{ partial "head.html" . }}
-{{ partial "header.html" . }}
+
+<div class="homepage-navigation">
+    {{ partial "header.html" . }}
+</div>
+
+<a href="https://store.steampowered.com/app/2265750?utm=gameful" target="_blank" class="hero">
+    <img class="hero__image" src="/img/projects/tonalities/tonalities-loop.gif">
+    <span class="hero__cta">Play Tonalities now!</span>
+</a>
+
 <div class="wrapper homepage">
-    <div id="gameContainer" class="homegame"></div>
     <hr>
     <div class="content">
         {{ .Content }}
