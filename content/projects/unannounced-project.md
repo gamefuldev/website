@@ -4,6 +4,7 @@ year: 2024
 release: TBD
 engine: "Godot 4"
 platforms: "Steam"
+thumbnail: /mithras/concept.jpg
 ---
 
 More details coming soon.

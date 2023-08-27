@@ -290,6 +290,12 @@ ul {
     padding-right: 4rem;
 }
 
+.static img {
+    filter: grayscale(100%) contrast(120%);
+    max-width: 20rem;
+    border-radius: 1rem;
+}
+
 .header {
     padding: 4rem;
     position: relative;

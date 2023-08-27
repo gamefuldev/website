@@ -5,7 +5,7 @@ layout: static
 
 ## Welcome!
 
-Gameful is an independent development studio established by Jared Rigby (UK) in late 2022.
+Gameful is an independent development studio established by Jared Rigby (UK) in 2022.
 
 Working in collaboration with other creatives worldwide, he is currently working on a range of projects that due for release in 2023 and beyond.
 
@@ -22,3 +22,5 @@ Working in collaboration with other creatives worldwide, he is currently working
 - 2009 - 2012: Music Technology BSc, University of York
 
 ---
+
+![Jared Rigby](/img/jared.jpg)
