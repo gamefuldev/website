@@ -2,7 +2,7 @@
 title: Gameful
 ---
 
-## Welcome friends!
+## Gameful Software Ltd
 
 We are a remote indie studio building fun experiences. Thanks for checking out our website.
 
