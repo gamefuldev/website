@@ -13,7 +13,7 @@ Tonalities is a physics-based puzzle game which challenges players to develop el
 
 Development started in Winter 2022 between Beijing and London (Ontario). The game is currently in  Steam Early Access and will be seeing bi-weekly updates until its full release in 2024.
 
-[You can try the demo today on Steam](https://store.steampowered.com/app/2265750?utm_source=gameful)
+[Play tonalities today!](https://store.steampowered.com/app/2265750?utm_source=gameful)
 
 ---
 
