@@ -5,7 +5,7 @@ baseURL = 'https://www.gameful.dev'
 defaultContentLanguage = 'en'
 
 [params]
-  images = ["/android-chrome-512x512.png"]
+  images = ["/twitter-card.png"]
 
 [languages]
   [languages.en]
