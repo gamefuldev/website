@@ -3,6 +3,10 @@ theme = 'gameful'
 baseURL = 'https://www.gameful.dev'
 
 defaultContentLanguage = 'en'
+
+[params]
+  images = ["/android-chrome-512x512.png"]
+
 [languages]
   [languages.en]
     contentDir = 'content'
