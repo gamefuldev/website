@@ -8,6 +8,9 @@
     <li>Release date: <strong>{{ .Params.Release }}</strong></li>
     <li>Platform: <strong>{{ .Params.Platforms }}</strong></li>
     <li>Engine: <strong>{{ .Params.Engine }}</strong></li>
+    {{ if .Params.Presskit }}
+    <li>Press Kit: <strong>{{ .Params.Presskit }}</strong></li>
+    {{ end }}
   </ul>
   <hr>
   {{ .Content }}
