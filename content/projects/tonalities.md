@@ -9,9 +9,9 @@ hero: /tonalities/tonalities-hero.png
 thumbnail: /tonalities/tonalities-thumbnail.png
 ---
 
-Tonalities is a physics-based puzzle game which challenges players to develop elaborate trick-shots to hit all blocks within a level.
+## Tonalities is a relaxing single-player puzzle game where you position tiles to complete elaborate trick shots
 
-Development started in Winter 2022 between Beijing and London (Ontario). The game is currently in  Steam Early Access and will be seeing bi-weekly updates until its full release in 2024.
+Development started in Winter 2022 between Beijing and London (Ontario). The game is currently in Steam Early Access and will be seeing bi-weekly updates until its full release in 2024.
 
 [Play tonalities today!](https://store.steampowered.com/app/2265750?utm_source=gameful)
 
