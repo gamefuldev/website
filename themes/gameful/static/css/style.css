@@ -740,6 +740,17 @@ ul {
     object-position: center;
 }
 
+.hero__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    background: #111;
+}
+
 .hero__cta {
     position: absolute;
     bottom: 2rem;
