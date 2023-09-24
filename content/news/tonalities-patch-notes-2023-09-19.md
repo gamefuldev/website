@@ -6,7 +6,7 @@ author: Jared Rigby
 tags: ["Steam", "Indie", "Early Access", "Release", "Tonalities"]
 ---
 
-It's been 2 weeks since the initial early access of [Tonalities on Steam](https://store.steampowered.com/app/2265750/Tonalities/) so it's time for the first batch of quality of life improvements.
+It's been 2 weeks since the initial early access of [Tonalities on Steam](https://store.steampowered.com/app/2265750/Tonalities?utm=gameful) so it's time for the first batch of quality of life improvements.
 
 Many thanks to everyone who's tried out the game at this early stage. Your feedback and support is massively appreciated, this latest version includes the following updates:
 
