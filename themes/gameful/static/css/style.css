@@ -401,6 +401,10 @@ ul {
     transition: all 0.4s ease;
 }
 
+.header--contact .header__nav-link:after {
+    border-bottom: 0.25rem solid #111;
+}
+
 .header__nav-link:hover:after,
 .header__nav-link.active:after {
     transform: translate(0,0);
