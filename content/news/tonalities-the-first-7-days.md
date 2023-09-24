@@ -55,3 +55,7 @@ Learn today, market more tomorrow!
 ### Day 5 - Running total: 10 units sold / 2 units refunded
 
 Had a lovely email exchange with Anthony at the Indie Diarist and set a tentative date of November 10th to appear on his show and discuss the podcast. Updated all of the screenshots on the Steam store page with newer and shinier examples.
+
+### Day 6 - Running total: 11 units sold / 2 units refunded
+
+OVER 10 UNITS SOLD! Was not able to continue with the marketing push as I needed to stay late at the day job.
