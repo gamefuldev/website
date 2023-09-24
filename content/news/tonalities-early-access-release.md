@@ -15,5 +15,3 @@ On a personal level, I'm massively proud to have released a game on Steam and wi
 We want the development process to be a collaborative effort between us and the players. So if you have any comments/suggestions, [please do share them in the discussion forums](https://steamcommunity.com/app/2265750/discussions/0/3811785047380607249/).
 
 Until next time!
-
-Jared

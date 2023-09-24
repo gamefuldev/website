@@ -5,6 +5,10 @@
         <i data-feather="calendar"></i>
         <time class="datetime__date" datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
     </div>
+    <div class="author">
+        <i data-feather="user"></i>
+        <span class="author__name">{{ .Param "author" }}</span>
+    </div>
     <div class="tags">
         {{ with .Params.tags }}
             <i data-feather="tag"></i>
