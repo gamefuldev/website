@@ -1,10 +1,10 @@
 ---
-title: Project Mithras (Working Title)
+title: Mithra (Working Title)
 year: 2024
 release: TBD
 engine: "Godot 4"
 platforms: "Steam"
-thumbnail: /mithras/concept.jpg
+thumbnail: /mithra/thumbnail.png
 ---
 
 More details coming soon.
@@ -15,3 +15,5 @@ More details coming soon.
 
 - **Jared Rigby:** Programming
 - **Daniel Griffen:** Writer
+- **Timothy Pyles:** Art
+- **Bronson Metcalfe:** Audio
